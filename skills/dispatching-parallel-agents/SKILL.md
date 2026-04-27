@@ -43,6 +43,7 @@ digraph when_to_use {
 - Failures are related (fix one might fix others)
 - Need to understand full system state
 - Agents would interfere with each other
+- Tasks form part of a structured implementation plan → use subagent-driven-development instead
 
 ## The Pattern
 
