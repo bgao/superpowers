@@ -27,9 +27,9 @@ A Claude Code perspective review of the superpowers skills identified 10 issues 
 
 ---
 
-## Fix 2 — `using-superpowers`: Compress from 760 → ~300 words
+## Fix 2 — `using-superpowers`: Compress from ~790 → ~300 words
 
-**Problem:** This skill loads in every session. At 760 words it inflates context significantly; the writing-skills guide targets <150 words for always-loaded workflows.
+**Problem:** This skill loads in every session. At ~790 words it inflates context significantly; the writing-skills guide targets <150 words for always-loaded workflows.
 
 **Fix:** Surgical prose cuts — nothing behavioral removed:
 - Compress Red Flags table from 12 entries to 6 (consolidate variations of the same rationalization pattern)
@@ -101,9 +101,10 @@ For all other changes, the full spec-review loop runs unchanged.
 - Tasks form part of a structured implementation plan → use subagent-driven-development instead
 ```
 
-**Fix — `subagent-driven-development`:** Add sibling branch to the "When to Use" flowchart:
+**Fix — `subagent-driven-development`:** Add a prose note at the end of the "When to Use" section, after the `**vs. Executing Plans (parallel session):**` block (which ends around line 38):
 ```
-"Multiple independent failures to debug?" → dispatching-parallel-agents
+**vs. Dispatching Parallel Agents (debugging multiple failures):**
+For debugging multiple independent failures across subsystems — not executing a plan — use dispatching-parallel-agents instead.
 ```
 
 ---
@@ -132,20 +133,30 @@ no browser interface is available.
 
 **Problem:** `docs/superpowers/plans/` is a superpowers-branded path that won't exist in most projects.
 
-**Before:**
+Two occurrences of `docs/superpowers/plans/` in the file. Both must be updated.
+
+**Line 18 — before:**
 ```
 Save plans to: `docs/superpowers/plans/YYYY-MM-DD-<feature-name>.md`
 ```
-
-**After:**
+**Line 18 — after:**
 ```
 Save plans to: `docs/plans/YYYY-MM-DD-<feature-name>.md`
 (Follow project conventions if a plans directory already exists elsewhere)
 ```
 
+**Line 138 — before** (note: this occurrence omits the date prefix):
+```
+docs/superpowers/plans/<filename>.md
+```
+**Line 138 — after:**
+```
+docs/plans/<filename>.md
+```
+
 ---
 
-## Fix 10 — Size reduction: `tdd`, `systematic-debugging`, `brainstorming`
+## Fix 10 — Size reduction: `test-driven-development`, `systematic-debugging`, `brainstorming`
 
 **Problem:** All three are ~1500 words against the writing-skills target of <500 words. Each is invoked on every feature implementation or bug fix.
 
