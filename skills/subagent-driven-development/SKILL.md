@@ -37,6 +37,9 @@ digraph when_to_use {
 - Two-stage review after each task: spec compliance first, then code quality
 - Faster iteration (no human-in-loop between tasks)
 
+**vs. Dispatching Parallel Agents (debugging multiple failures):**
+For debugging multiple independent failures across subsystems — not executing a plan — use dispatching-parallel-agents instead.
+
 ## The Process
 
 ```dot
