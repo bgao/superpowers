@@ -42,6 +42,13 @@ git diff {BASE_SHA}..{HEAD_SHA}
 - Performance implications?
 - Security concerns?
 
+**Concurrency & Thread Safety:**
+- Shared mutable state protected by synchronization (mutex, lock_guard, atomic)?
+- C++ standard containers (vector, map, unordered_map, deque, string) require external locking for any concurrent access — concurrent reads are only safe with no concurrent writes
+- Iterator invalidation under concurrent modification?
+- std::atomic for simple shared values; std::shared_mutex for read-heavy scenarios?
+- Thread ownership clearly defined — who accesses what, under what lock?
+
 **Testing:**
 - Tests actually test logic (not mocks)?
 - Edge cases covered?

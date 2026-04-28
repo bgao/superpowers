@@ -84,6 +84,7 @@ Task tool (general-purpose):
     - Is this my best work?
     - Are names clear and accurate (match what things do, not how they work)?
     - Is the code clean and maintainable?
+    - If shared state exists: is concurrent access synchronized? C++ containers are not thread-safe by default — any multi-threaded access requires a mutex or atomic.
 
     **Discipline:**
     - Did I avoid overbuilding (YAGNI)?
